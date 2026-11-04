@@ -1,0 +1,327 @@
+/* Main page */
+.business-page {
+    min-height: 100vh;
+    width: 100%;
+    padding: 45px 20px;
+    background: #f4f7fb;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    box-sizing: border-box;
+}
+
+.business-card {
+    width: 100%;
+    max-width: 700px;
+    min-width: 0;
+    padding: 38px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    box-shadow: 0 5px 25px rgba(15, 23, 42, 0.06);
+    box-sizing: border-box;
+}
+
+/* Back to Dashboard */
+.business-card > .back-dashboard-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 16px;
+    margin-bottom: 28px;
+    background: #eff6ff;
+    color: #2563eb;
+    border: 1px solid #bfdbfe;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.business-card > .back-dashboard-button:hover {
+    background: #2563eb;
+    color: #ffffff;
+    transform: translateY(-1px);
+}
+
+.business-card > .back-dashboard-button:focus-visible {
+    outline: 3px solid #93c5fd;
+    outline-offset: 3px;
+}
+
+/* Heading */
+.business-card h1 {
+    margin: 0 0 10px;
+    color: #0f172a;
+    font-size: 29px;
+    font-weight: 700;
+    line-height: 1.3;
+    overflow-wrap: anywhere;
+}
+
+.business-card > p {
+    margin: 0 0 28px;
+    color: #64748b;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+}
+
+/* Form fields */
+.business-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    margin-bottom: 23px;
+    min-width: 0;
+}
+
+.business-form-group label {
+    color: #334155;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.business-form-group input,
+.business-form-group textarea {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    padding: 14px 15px;
+    border: 1px solid #cbd5e1;
+    border-radius: 9px;
+    font: inherit;
+    font-size: 14px;
+    color: #1e293b;
+    background: #ffffff;
+    outline: none;
+    box-sizing: border-box;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.business-form-group input:focus,
+.business-form-group textarea:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+.business-form-group input::placeholder,
+.business-form-group textarea::placeholder {
+    color: #94a3b8;
+}
+
+.business-form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+    line-height: 1.6;
+}
+
+/* Save button */
+.business-card form button {
+    width: 100%;
+    min-height: 46px;
+    padding: 14px;
+    border: none;
+    border-radius: 9px;
+    background: #2563eb;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.business-card form button:hover:not(:disabled) {
+    background: #1d4ed8;
+}
+
+.business-card form button:active:not(:disabled) {
+    transform: scale(0.99);
+}
+
+.business-card form button:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+}
+
+/* Public chatbot link */
+.business-public-id {
+    width: 100%;
+    min-width: 0;
+    margin: 25px 0 28px;
+    padding: 22px;
+    background: #eff6ff;
+    border: 1px solid #bfdbfe;
+    border-radius: 12px;
+    box-sizing: border-box;
+}
+
+.business-public-id label {
+    display: block;
+    margin-bottom: 12px;
+    color: #1e40af;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.business-public-id p {
+    min-width: 0;
+    padding: 12px;
+    margin: 0 0 15px !important;
+    background: #ffffff;
+    border: 1px solid #dbeafe;
+    border-radius: 8px;
+    color: #1e293b;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
+
+.business-public-id button {
+    width: 100%;
+    min-height: 44px;
+    padding: 12px;
+    margin-bottom: 12px;
+    border: none;
+    border-radius: 8px;
+    background: #2563eb;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.business-public-id button:hover {
+    background: #1d4ed8;
+}
+
+.business-public-id small {
+    display: block;
+    color: #64748b;
+    font-size: 12px;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+}
+
+.business-public-id small[role="status"] {
+    margin-bottom: 10px;
+    color: #15803d;
+    font-weight: 600;
+}
+
+/* Error and success messages */
+.business-error,
+.business-success {
+    padding: 13px 15px;
+    margin-bottom: 20px;
+    border-radius: 9px;
+    font-size: 14px;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+.business-error {
+    color: #b91c1c;
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+}
+
+.business-success {
+    color: #15803d;
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+    .business-page {
+        padding: 35px 20px;
+    }
+
+    .business-card {
+        max-width: 650px;
+        padding: 32px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .business-page {
+        min-height: 100vh;
+        padding: 24px 14px;
+    }
+
+    .business-card {
+        padding: 25px 19px;
+        border-radius: 13px;
+    }
+
+    .business-card > .back-dashboard-button {
+        margin-bottom: 24px;
+    }
+
+    .business-card h1 {
+        font-size: 25px;
+    }
+
+    .business-card > p {
+        margin-bottom: 23px;
+        font-size: 14px;
+    }
+
+    .business-form-group {
+        margin-bottom: 20px;
+    }
+
+    .business-form-group input,
+    .business-form-group textarea {
+        padding: 13px;
+        font-size: 14px;
+    }
+
+    .business-public-id {
+        padding: 17px;
+        margin: 22px 0;
+    }
+}
+
+/* Small phones */
+@media (max-width: 380px) {
+    .business-page {
+        padding: 18px 10px;
+    }
+
+    .business-card {
+        padding: 21px 15px;
+    }
+
+    .business-card h1 {
+        font-size: 23px;
+    }
+
+    .business-public-id {
+        padding: 14px;
+    }
+
+    .business-public-id p {
+        font-size: 12px;
+        padding: 10px;
+    }
+
+    .business-error,
+    .business-success {
+        padding: 11px;
+        font-size: 13px;
+    }
+}
+
+/* Touch devices */
+@media (hover: none) {
+    .business-card form button:hover:not(:disabled),
+    .business-public-id button:hover {
+        background: #2563eb;
+    }
+}

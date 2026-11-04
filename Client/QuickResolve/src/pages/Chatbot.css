@@ -1,0 +1,795 @@
+
+/* =========================================
+   MAIN CHATBOT LAYOUT
+========================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+.chatbot-page {
+    min-height: 100vh;
+    min-height: 100dvh;
+    padding: 24px 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f1f5f9;
+}
+
+.chatbot-window {
+    width: 100%;
+    max-width: 720px;
+    height: min(88vh, 850px);
+    min-height: 550px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 18px;
+    box-shadow: 0 12px 40px rgba(15, 23, 42, 0.09);
+}
+
+/* =========================================
+   CHAT HEADER
+========================================= */
+
+.chatbot-header {
+    flex-shrink: 0;
+    padding: 18px 22px;
+    color: #ffffff;
+    background: #1e3a8a;
+}
+
+.chatbot-profile {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+}
+
+.chatbot-avatar {
+    width: 46px;
+    height: 46px;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #ffffff;
+    border-radius: 13px;
+    font-size: 25px;
+}
+
+.chatbot-profile h2 {
+    margin: 0 0 5px;
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.chatbot-profile span {
+    color: #bbf7d0;
+    font-size: 12px;
+}
+
+/* =========================================
+   CHAT MESSAGES
+========================================= */
+
+.chatbot-messages {
+    flex: 1 1 0;
+    min-height: 0;
+    padding: 24px 22px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background: #f8fafc;
+    scroll-behavior: smooth;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+}
+
+.chatbot-date {
+    margin-bottom: 24px;
+    color: #94a3b8;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.chat-message {
+    display: flex;
+    margin-bottom: 17px;
+}
+
+.chat-message.bot {
+    justify-content: flex-start;
+}
+
+.chat-message.user {
+    justify-content: flex-end;
+}
+
+.chat-bubble {
+    max-width: 80%;
+    padding: 13px 16px;
+    border-radius: 15px;
+    font-size: 14px;
+    line-height: 1.7;
+    overflow-wrap: anywhere;
+    white-space: pre-wrap;
+}
+
+.chat-message.bot .chat-bubble {
+    color: #334155;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-bottom-left-radius: 4px;
+}
+
+.chat-message.user .chat-bubble {
+    color: #ffffff;
+    background: #2563eb;
+    border-bottom-right-radius: 4px;
+}
+
+/* =========================================
+   SUGGESTED QUESTIONS
+========================================= */
+
+.suggested-questions {
+    flex-shrink: 0;
+    max-height: 190px;
+    padding: 11px 18px;
+    overflow-y: auto;
+    background: #ffffff;
+    border-top: 1px solid #e2e8f0;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+}
+
+.suggested-questions p {
+    margin: 0 0 8px;
+    color: #475569;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.suggested-question-button {
+    display: block;
+    width: 100%;
+    min-height: 38px;
+    padding: 8px 12px;
+    margin-bottom: 6px;
+    text-align: left;
+    color: #1d4ed8;
+    background: #eff6ff;
+    border: 1px solid #dbeafe;
+    border-radius: 8px;
+    font-size: 12px;
+    line-height: 1.5;
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s;
+}
+
+.suggested-question-button:last-child {
+    margin-bottom: 0;
+}
+
+.suggested-question-button:hover:not(:disabled) {
+    background: #dbeafe;
+    border-color: #93c5fd;
+}
+
+.suggested-question-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* =========================================
+   MESSAGE INPUT
+========================================= */
+
+.chatbot-input-area {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    padding: 13px 18px;
+    border-top: 1px solid #e2e8f0;
+    background: #ffffff;
+}
+
+.chatbot-input-area input {
+    flex: 1;
+    min-width: 0;
+    height: 46px;
+    padding: 0 16px;
+    border: 1px solid #cbd5e1;
+    border-radius: 25px;
+    outline: none;
+    font-size: 14px;
+    color: #1e293b;
+    background: #ffffff;
+}
+
+.chatbot-input-area input:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.chatbot-input-area input:disabled {
+    background: #f1f5f9;
+}
+
+.chatbot-input-area button {
+    width: 46px;
+    height: 46px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 50%;
+    color: #ffffff;
+    background: #2563eb;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.chatbot-input-area button:hover:not(:disabled) {
+    background: #1d4ed8;
+}
+
+.chatbot-input-area button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* =========================================
+   HUMAN SUPPORT SECTION
+========================================= */
+
+.handoff-section {
+    flex-shrink: 0;
+    padding: 10px 18px;
+    border-top: 1px solid #e2e8f0;
+    background: #ffffff;
+}
+
+.handoff-toggle-button {
+    width: 100%;
+    min-height: 42px;
+    padding: 10px 14px;
+    border: 1px solid #bfdbfe;
+    border-radius: 9px;
+    background: #eff6ff;
+    color: #1d4ed8;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.handoff-toggle-button:hover:not(:disabled) {
+    background: #dbeafe;
+}
+
+.handoff-toggle-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* =========================================
+   HUMAN SUPPORT FORM
+========================================= */
+
+.handoff-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    max-height: min(55vh, 480px);
+    min-height: 0;
+    margin-top: 12px;
+    padding: 17px;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    background: #f8fafc;
+
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+}
+
+.handoff-form h3 {
+    margin: 0;
+    color: #0f172a;
+    font-size: 17px;
+    line-height: 1.4;
+}
+
+.handoff-form p {
+    margin: 0;
+    color: #64748b;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+/* Form input fields */
+
+.handoff-form input,
+.handoff-form textarea {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    min-height: 44px;
+    flex-shrink: 0;
+    padding: 11px 13px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    background: #ffffff;
+    color: #1e293b;
+    font-family: inherit;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.handoff-form input:focus,
+.handoff-form textarea:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.handoff-form textarea {
+    min-height: 105px;
+    max-height: 180px;
+    resize: vertical;
+    line-height: 1.6;
+}
+
+/* Form feedback */
+
+.handoff-form .handoff-error,
+.handoff-form .handoff-success {
+    flex-shrink: 0;
+    margin: 0;
+    padding: 10px 12px;
+    border-radius: 7px;
+    font-size: 13px;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+.handoff-form .handoff-error {
+    color: #b91c1c;
+    background: #fee2e2;
+}
+
+.handoff-form .handoff-success {
+    color: #15803d;
+    background: #dcfce7;
+    font-weight: 600;
+}
+
+/* Submit button */
+
+.handoff-submit-button {
+    width: 100%;
+    min-height: 46px;
+    flex-shrink: 0;
+    padding: 11px 14px;
+    border: none;
+    border-radius: 8px;
+    background: #2563eb;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.handoff-submit-button:hover:not(:disabled) {
+    background: #1d4ed8;
+}
+
+.handoff-submit-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* =========================================
+   TABLETS
+========================================= */
+
+@media (max-width: 900px) {
+    .chatbot-page {
+        padding: 18px;
+    }
+
+    .chatbot-window {
+        max-width: 680px;
+        height: 90vh;
+        height: 90dvh;
+    }
+}
+
+/* =========================================
+   MOBILE PHONES
+========================================= */
+
+@media (max-width: 600px) {
+    .chatbot-page {
+        width: 100%;
+        height: 100vh;
+        height: 100dvh;
+        min-height: 0;
+        padding: 0;
+        margin: 0;
+        align-items: stretch;
+        overflow: hidden;
+        background: #ffffff;
+    }
+
+    .chatbot-window {
+        width: 100%;
+        max-width: none;
+        height: 100%;
+        min-height: 0;
+        border: none;
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    .chatbot-header {
+        padding: 12px 15px;
+        padding-top: max(12px, env(safe-area-inset-top));
+    }
+
+    .chatbot-avatar {
+        width: 42px;
+        height: 42px;
+        font-size: 23px;
+        border-radius: 11px;
+    }
+
+    .chatbot-profile {
+        gap: 11px;
+    }
+
+    .chatbot-profile h2 {
+        font-size: 16px;
+    }
+
+    .chatbot-profile span {
+        font-size: 11px;
+    }
+
+    .chatbot-messages {
+        padding: 17px 13px;
+        min-height: 0;
+    }
+
+    .chatbot-date {
+        margin-bottom: 18px;
+    }
+
+    .chat-message {
+        margin-bottom: 14px;
+    }
+
+    .chat-bubble {
+        max-width: 88%;
+        padding: 11px 13px;
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    .suggested-questions {
+        max-height: 145px;
+        padding: 8px 12px;
+    }
+
+    .suggested-questions p {
+        margin-bottom: 6px;
+        font-size: 11px;
+    }
+
+    .suggested-question-button {
+        min-height: 34px;
+        padding: 7px 10px;
+        margin-bottom: 5px;
+        font-size: 12px;
+    }
+
+    .chatbot-input-area {
+        gap: 9px;
+        padding: 9px 12px;
+    }
+
+    .chatbot-input-area input {
+        height: 44px;
+        padding: 0 14px;
+        font-size: 16px;
+    }
+
+    .chatbot-input-area button {
+        width: 44px;
+        height: 44px;
+        font-size: 19px;
+    }
+
+    .handoff-section {
+        padding: 8px 12px;
+        padding-bottom: max(8px, env(safe-area-inset-bottom));
+    }
+
+    .handoff-toggle-button {
+        min-height: 40px;
+        padding: 9px 12px;
+        font-size: 12px;
+    }
+
+    .handoff-form {
+        max-height: 55dvh;
+        gap: 10px;
+        margin-top: 9px;
+        padding: 13px;
+    }
+
+    .handoff-form h3 {
+        font-size: 15px;
+    }
+
+    .handoff-form p {
+        font-size: 12px;
+    }
+
+    .handoff-form input,
+    .handoff-form textarea {
+        min-height: 44px;
+        padding: 10px 11px;
+        font-size: 16px;
+    }
+
+    .handoff-form textarea {
+        min-height: 95px;
+    }
+
+    .handoff-submit-button {
+        min-height: 46px;
+    }
+}
+
+/* =========================================
+   SMALL PHONES
+========================================= */
+
+@media (max-width: 380px) {
+    .chatbot-header {
+        padding-left: 11px;
+        padding-right: 11px;
+    }
+
+    .chatbot-messages {
+        padding: 14px 10px;
+    }
+
+    .chat-bubble {
+        max-width: 92%;
+        font-size: 13px;
+    }
+
+    .suggested-questions {
+        max-height: 125px;
+        padding: 7px 10px;
+    }
+
+    .suggested-question-button {
+        font-size: 11px;
+    }
+
+    .chatbot-input-area {
+        padding-left: 9px;
+        padding-right: 9px;
+    }
+
+    .handoff-section {
+        padding-left: 9px;
+        padding-right: 9px;
+    }
+
+    .handoff-form {
+        padding: 11px;
+        gap: 9px;
+        max-height: 55dvh;
+    }
+
+    .handoff-form textarea {
+        min-height: 85px;
+    }
+}
+
+/* =========================================
+   LANDSCAPE PHONES
+========================================= */
+
+@media (max-width: 900px) and (orientation: landscape) {
+    .chatbot-page {
+        padding: 0;
+    }
+
+    .chatbot-window {
+        width: 100%;
+        max-width: none;
+        height: 100vh;
+        height: 100dvh;
+        min-height: 0;
+        border-radius: 0;
+    }
+
+    .chatbot-header {
+        padding: 7px 15px;
+    }
+
+    .chatbot-avatar {
+        width: 35px;
+        height: 35px;
+    }
+
+    .chatbot-messages {
+        padding: 10px 15px;
+    }
+
+    .chatbot-date {
+        margin-bottom: 10px;
+    }
+
+    .chat-message {
+        margin-bottom: 9px;
+    }
+
+    .suggested-questions {
+        max-height: 90px;
+        padding: 5px 12px;
+    }
+
+    .suggested-question-button {
+        padding: 5px 9px;
+        margin-bottom: 4px;
+    }
+
+    .chatbot-input-area {
+        padding: 6px 12px;
+    }
+
+    .chatbot-input-area input,
+    .chatbot-input-area button {
+        height: 38px;
+    }
+
+    .handoff-section {
+        padding: 5px 12px;
+    }
+
+    .handoff-toggle-button {
+        min-height: 34px;
+        padding: 6px 10px;
+    }
+
+    .handoff-form {
+        max-height: 55dvh;
+        gap: 8px;
+        margin-top: 7px;
+        padding: 10px;
+    }
+
+    .handoff-form textarea {
+        min-height: 65px;
+    }
+}
+
+/* =========================================
+   ACCESSIBILITY
+========================================= */
+
+.chatbot-window button:focus-visible,
+.chatbot-window input:focus-visible,
+.chatbot-window textarea:focus-visible {
+    outline: 2px solid #2563eb;
+    outline-offset: 2px;
+}
+
+@media (hover: none) {
+    .handoff-toggle-button:hover:not(:disabled) {
+        background: #eff6ff;
+    }
+
+    .handoff-submit-button:hover:not(:disabled) {
+        background: #2563eb;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .chatbot-window *,
+    .chatbot-window *::before,
+    .chatbot-window *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+/* =========================================
+   HUMAN SUPPORT FORM - LAYOUT FIX
+   Allow the complete chatbot page to scroll
+   when the support form is opened.
+========================================= */
+
+/* Desktop and tablet */
+.chatbot-page:has(.handoff-form) {
+    min-height: 100vh;
+    min-height: 100dvh;
+    height: auto;
+    align-items: flex-start;
+    overflow-y: auto;
+    padding-top: 24px;
+    padding-bottom: 24px;
+}
+
+.chatbot-page:has(.handoff-form) .chatbot-window {
+    height: auto;
+    min-height: 550px;
+    max-height: none;
+    overflow: visible;
+}
+
+.chatbot-page:has(.handoff-form) .chatbot-messages {
+    flex: 0 0 auto;
+    height: clamp(180px, 35vh, 360px);
+    min-height: 180px;
+}
+
+.chatbot-page:has(.handoff-form) .handoff-section {
+    flex-shrink: 0;
+}
+
+.chatbot-page:has(.handoff-form) .handoff-form {
+    max-height: none;
+    overflow: visible;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .chatbot-page:has(.handoff-form) {
+        height: auto;
+        min-height: 100dvh;
+        overflow-y: auto;
+        overflow-x: hidden;
+        padding: 0;
+    }
+
+    .chatbot-page:has(.handoff-form) .chatbot-window {
+        height: auto;
+        min-height: 100dvh;
+        overflow: visible;
+    }
+
+    .chatbot-page:has(.handoff-form) .chatbot-messages {
+        flex: 0 0 auto;
+        height: 30dvh;
+        min-height: 160px;
+    }
+
+    .chatbot-page:has(.handoff-form) .handoff-form {
+        max-height: none;
+        overflow: visible;
+        padding-bottom: 18px;
+    }
+}
+
+/* Small phones */
+@media (max-width: 380px) {
+    .chatbot-page:has(.handoff-form) .chatbot-messages {
+        height: 25dvh;
+        min-height: 140px;
+    }
+}

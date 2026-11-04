@@ -1,0 +1,468 @@
+/* ==============================
+   MAIN PAGE
+============================== */
+
+.support-requests-page {
+    width: 100%;
+    max-width: 1100px;
+    min-width: 0;
+    margin: 0 auto;
+    padding: 30px 24px;
+    box-sizing: border-box;
+}
+
+/* ==============================
+   HEADER
+============================== */
+
+.support-requests-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+    min-width: 0;
+}
+
+.support-requests-header h1 {
+    margin: 0 0 8px;
+    color: #111827;
+    font-size: 28px;
+    line-height: 1.3;
+    overflow-wrap: anywhere;
+}
+
+.support-requests-header p {
+    margin: 0;
+    color: #6b7280;
+    line-height: 1.6;
+}
+
+/* Header buttons wrapper */
+.support-requests-header-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 12px;
+    flex-shrink: 0;
+}
+
+/* Make both header buttons look exactly the same */
+.support-requests-header-actions .back-dashboard-button,
+.support-requests-header-actions .refresh-requests-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 42px;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 7px;
+    background: #2563eb;
+    color: #ffffff;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.4;
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+    cursor: pointer;
+    box-sizing: border-box;
+    transition: background 0.2s ease;
+}
+
+/* Same hover effect for both buttons */
+.support-requests-header-actions .back-dashboard-button:hover,
+.support-requests-header-actions .refresh-requests-button:hover:not(:disabled) {
+    background: #1d4ed8;
+}
+
+/* Keyboard accessibility */
+.support-requests-header-actions .back-dashboard-button:focus-visible,
+.support-requests-header-actions .refresh-requests-button:focus-visible {
+    outline: 3px solid #93c5fd;
+    outline-offset: 3px;
+}
+
+/* Disabled refresh button */
+.refresh-requests-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* ==============================
+   REQUEST COUNT
+============================== */
+
+.support-requests-count {
+    margin-bottom: 18px;
+    color: #4b5563;
+    overflow-wrap: anywhere;
+}
+
+/* ==============================
+   REQUESTS LIST
+============================== */
+
+.support-requests-list {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 18px;
+    min-width: 0;
+}
+
+/* ==============================
+   REQUEST CARD
+============================== */
+
+.support-request-card {
+    min-width: 0;
+    padding: 22px;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    background: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    box-sizing: border-box;
+}
+
+.support-request-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 18px;
+    min-width: 0;
+}
+
+.support-request-top > div {
+    min-width: 0;
+}
+
+.support-request-top h3 {
+    margin: 0 0 6px;
+    color: #111827;
+    overflow-wrap: anywhere;
+}
+
+.support-request-date {
+    margin: 0;
+    color: #9ca3af;
+    font-size: 13px;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+/* ==============================
+   STATUS BADGES
+============================== */
+
+.support-status {
+    flex-shrink: 0;
+    display: inline-block;
+    padding: 6px 11px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.support-status.pending {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.support-status.responded {
+    background: #dbeafe;
+    color: #1e40af;
+}
+
+.support-status.closed {
+    background: #dcfce7;
+    color: #166534;
+}
+
+/* ==============================
+   REQUEST DETAILS
+============================== */
+
+.support-request-details {
+    min-width: 0;
+}
+
+.support-request-details p {
+    color: #374151;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+.support-request-issue {
+    min-width: 0;
+    padding: 12px;
+    border-radius: 8px;
+    background: #f9fafb;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+    box-sizing: border-box;
+}
+
+/* ==============================
+   CONVERSATION SUMMARY
+============================== */
+
+.support-request-summary {
+    min-width: 0;
+    margin-top: 18px;
+    padding: 14px;
+    border-left: 3px solid #2563eb;
+    border-radius: 5px;
+    background: #eff6ff;
+    box-sizing: border-box;
+}
+
+.support-request-summary h4 {
+    margin: 0 0 8px;
+    color: #1e40af;
+    overflow-wrap: anywhere;
+}
+
+.support-request-summary p {
+    margin: 0;
+    color: #374151;
+    font-size: 14px;
+    line-height: 1.6;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
+
+/* ==============================
+   STATUS ACTIONS
+============================== */
+
+.support-request-actions {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 18px;
+}
+
+.support-request-actions label {
+    color: #374151;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.support-request-actions select {
+    max-width: 100%;
+    min-width: 0;
+    padding: 9px 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 7px;
+    background: white;
+    color: #374151;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+/* ==============================
+   ERROR MESSAGE
+============================== */
+
+.support-requests-error {
+    margin-bottom: 16px;
+    padding: 12px;
+    border-radius: 7px;
+    background: #fee2e2;
+    color: #991b1b;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+/* ==============================
+   EMPTY STATE
+============================== */
+
+.empty-support-requests {
+    padding: 45px 20px;
+    border: 1px dashed #d1d5db;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.empty-support-requests h3 {
+    color: #374151;
+    overflow-wrap: anywhere;
+}
+
+.empty-support-requests p {
+    color: #6b7280;
+    line-height: 1.6;
+}
+
+/* ==============================
+   TABLETS
+============================== */
+
+@media (max-width: 768px) {
+    .support-requests-page {
+        padding: 25px 20px;
+    }
+
+    .support-requests-header h1 {
+        font-size: 25px;
+    }
+
+    .support-request-card {
+        padding: 19px;
+    }
+
+    .support-requests-header-actions {
+        gap: 9px;
+    }
+}
+
+/* ==============================
+   MOBILE
+============================== */
+
+@media (max-width: 600px) {
+    .support-requests-page {
+        padding: 22px 14px;
+    }
+
+    .support-requests-header {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 14px;
+    }
+
+    .support-requests-header h1 {
+        font-size: 24px;
+    }
+
+    .support-requests-header-actions {
+        width: 100%;
+        justify-content: stretch;
+        flex-wrap: wrap;
+    }
+
+    .support-requests-header-actions .back-dashboard-button,
+    .support-requests-header-actions .refresh-requests-button {
+        flex: 1 1 140px;
+        min-width: 0;
+        min-height: 44px;
+        white-space: normal;
+    }
+
+    .support-request-card {
+        padding: 16px;
+    }
+
+    .support-request-top {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .support-request-actions {
+        align-items: stretch;
+        flex-direction: column;
+        gap: 9px;
+    }
+
+    .support-request-actions select {
+        width: 100%;
+        min-height: 42px;
+    }
+
+    .empty-support-requests {
+        padding: 30px 16px;
+    }
+}
+
+/* ==============================
+   SMALL PHONES
+============================== */
+
+@media (max-width: 380px) {
+    .support-requests-page {
+        padding: 18px 11px;
+    }
+
+    .support-requests-header-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .support-requests-header-actions .back-dashboard-button,
+    .support-requests-header-actions .refresh-requests-button {
+        width: 100%;
+        flex: none;
+    }
+
+    .support-request-card {
+        padding: 14px;
+    }
+
+    .support-request-summary {
+        padding: 11px;
+    }
+
+    .support-request-issue {
+        padding: 10px;
+        font-size: 13px;
+    }
+
+    .support-request-summary p {
+        font-size: 13px;
+    }
+}
+
+/* ==============================
+   TOUCH DEVICES
+============================== */
+
+@media (hover: none) {
+    .support-requests-header-actions .back-dashboard-button:hover,
+    .support-requests-header-actions .refresh-requests-button:hover:not(:disabled) {
+        background: #2563eb;
+    }
+}
+/* =========================================
+   SOCKET.IO CONNECTION STATUS
+========================================= */
+
+.socket-connection-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 10px;
+    padding: 6px 11px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.socket-connection-status.connected {
+    color: #15803d;
+    background: #dcfce7;
+}
+
+.socket-connection-status.disconnected {
+    color: #b91c1c;
+    background: #fee2e2;
+}
+
+.socket-status-dot {
+    width: 8px;
+    height: 8px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: currentColor;
+}
+
+.socket-connection-status.connected .socket-status-dot {
+    box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.15);
+}

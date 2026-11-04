@@ -1,0 +1,607 @@
+/* ==============================
+   MAIN PAGE
+============================== */
+
+.commitment-page {
+    width: min(1200px, calc(100% - 40px));
+    min-width: 0;
+    margin: 35px auto;
+    padding: 10px 0 40px;
+    color: #1e293b;
+    box-sizing: border-box;
+}
+
+/* ==============================
+   HEADER
+============================== */
+
+.commitment-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 30px;
+    min-width: 0;
+}
+
+.commitment-header h1 {
+    margin: 0 0 10px;
+    color: #0f172a;
+    font-size: 29px;
+    line-height: 1.3;
+    overflow-wrap: anywhere;
+}
+
+.commitment-header p {
+    margin: 0;
+    color: #64748b;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+}
+
+/* Header buttons wrapper */
+.commitment-header-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 12px;
+    flex-shrink: 0;
+}
+
+/* Make both header buttons look identical */
+.commitment-header-actions .commitment-back-btn,
+.commitment-header-actions button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 42px;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 7px;
+    background: #2563eb;
+    color: #ffffff;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.4;
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+    cursor: pointer;
+    box-sizing: border-box;
+    transition: background 0.2s ease;
+}
+
+/* Same hover effect for both buttons */
+.commitment-header-actions .commitment-back-btn:hover,
+.commitment-header-actions button:hover:not(:disabled) {
+    background: #1d4ed8;
+}
+
+/* Keyboard accessibility */
+.commitment-header-actions .commitment-back-btn:focus-visible,
+.commitment-header-actions button:focus-visible {
+    outline: 3px solid #93c5fd;
+    outline-offset: 3px;
+}
+
+/* Disabled refresh button */
+.commitment-header-actions button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* ==============================
+   SUMMARY CARDS
+============================== */
+
+.commitment-summary {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+    margin-bottom: 35px;
+}
+
+.commitment-summary-card {
+    min-width: 0;
+    background: #ffffff;
+    padding: 22px;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(15, 23, 42, 0.04);
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-sizing: border-box;
+}
+
+.commitment-summary-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(15, 23, 42, 0.07);
+}
+
+.commitment-summary-card h3 {
+    font-size: 29px;
+    margin: 0 0 8px;
+    color: #2563eb;
+}
+
+.commitment-summary-card p {
+    margin: 0;
+    color: #64748b;
+    font-size: 14px;
+    font-weight: 500;
+    overflow-wrap: anywhere;
+}
+
+/* ==============================
+   NOTIFICATIONS
+============================== */
+
+.commitment-notifications {
+    margin-bottom: 20px;
+}
+
+.commitment-error,
+.commitment-success {
+    padding: 13px 16px;
+    border-radius: 9px;
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 10px 0;
+    overflow-wrap: anywhere;
+}
+
+.commitment-error {
+    color: #b91c1c;
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+}
+
+.commitment-success {
+    color: #15803d;
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+}
+
+/* ==============================
+   TOOLBAR
+============================== */
+
+.commitment-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+    min-width: 0;
+}
+
+.commitment-toolbar h2 {
+    margin: 0;
+    color: #0f172a;
+    font-size: 22px;
+    overflow-wrap: anywhere;
+}
+
+/* ==============================
+   COMMITMENT SECTIONS
+============================== */
+
+.commitment-section {
+    margin-bottom: 38px;
+    min-width: 0;
+}
+
+.commitment-section h2 {
+    margin: 0 0 18px;
+    color: #1e293b;
+    font-size: 19px;
+    overflow-wrap: anywhere;
+}
+
+.commitment-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: stretch;
+    gap: 20px;
+}
+
+/* ==============================
+   COMMITMENT CARDS
+============================== */
+
+.commitment-card {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    background: #ffffff;
+    padding: 23px;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 3px 10px rgba(15, 23, 42, 0.04);
+    transition: box-shadow 0.2s;
+    box-sizing: border-box;
+}
+
+.commitment-card:hover {
+    box-shadow: 0 6px 16px rgba(15, 23, 42, 0.07);
+}
+
+.commitment-description {
+    font-weight: 600;
+    color: #0f172a;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+    margin-top: 0;
+}
+
+/* ==============================
+   ORIGINAL CHATBOT MESSAGE
+============================== */
+
+.commitment-message {
+    min-width: 0;
+    background: #f8fafc;
+    padding: 15px;
+    border: 1px solid #e2e8f0;
+    border-radius: 9px;
+    margin: 15px 0;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+    box-sizing: border-box;
+}
+
+.commitment-message p:last-child {
+    margin-bottom: 0;
+    color: #475569;
+    line-height: 1.6;
+}
+
+.commitment-label {
+    font-size: 12px;
+    font-weight: 700;
+    color: #64748b;
+    margin-top: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+}
+
+/* ==============================
+   PENDING COMMITMENT FORM
+============================== */
+
+.commitment-form {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    min-width: 0;
+}
+
+.commitment-form label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #334155;
+    margin-top: 8px;
+}
+
+.commitment-form textarea,
+.commitment-form input {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    padding: 12px 13px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font: inherit;
+    font-size: 14px;
+    color: #1e293b;
+    background: #ffffff;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    box-sizing: border-box;
+}
+
+.commitment-form textarea:focus,
+.commitment-form input:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+.commitment-form textarea {
+    resize: vertical;
+    line-height: 1.5;
+}
+
+/* ==============================
+   COMMITMENT ACTION BUTTONS
+============================== */
+
+.commitment-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.commitment-actions button,
+.commitment-complete-btn {
+    padding: 11px 17px;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.commitment-approve-btn,
+.commitment-complete-btn {
+    background: #15803d;
+}
+
+.commitment-approve-btn:hover:not(:disabled),
+.commitment-complete-btn:hover:not(:disabled) {
+    background: #166534;
+}
+
+.commitment-ignore-btn {
+    background: #64748b;
+}
+
+.commitment-ignore-btn:hover:not(:disabled) {
+    background: #475569;
+}
+
+.commitment-actions button:disabled,
+.commitment-complete-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.commitment-complete-btn {
+    width: 100%;
+    margin-top: auto;
+}
+
+/* ==============================
+   DEADLINES AND COMPLETION
+============================== */
+
+.commitment-deadline,
+.commitment-completed-date {
+    color: #64748b;
+    font-size: 14px;
+    margin: 15px 0;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+.commitment-deadline strong {
+    color: #334155;
+}
+
+.commitment-completed-date {
+    color: #15803d;
+}
+
+/* ==============================
+   STATUS BADGES
+============================== */
+
+.commitment-status {
+    display: inline-block;
+    width: fit-content;
+    max-width: 100%;
+    padding: 7px 13px;
+    background: #dcfce7;
+    color: #166534;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    overflow-wrap: anywhere;
+}
+
+/* ==============================
+   EMPTY STATES
+============================== */
+
+.commitment-empty {
+    color: #64748b;
+    background: #f8fafc;
+    border: 1px dashed #cbd5e1;
+    border-radius: 9px;
+    padding: 18px;
+    font-size: 14px;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+/* ==============================
+   MEDIUM SCREENS
+============================== */
+
+@media (max-width: 1000px) {
+    .commitment-summary {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .commitment-grid {
+        gap: 16px;
+    }
+}
+
+/* ==============================
+   TABLETS
+============================== */
+
+@media (max-width: 768px) {
+    .commitment-page {
+        width: calc(100% - 36px);
+        margin: 28px auto;
+    }
+
+    .commitment-header h1 {
+        font-size: 26px;
+    }
+
+    .commitment-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .commitment-card {
+        padding: 21px;
+    }
+}
+
+/* ==============================
+   MOBILE
+============================== */
+
+@media (max-width: 600px) {
+    .commitment-page {
+        width: calc(100% - 28px);
+        margin: 24px auto;
+        padding-bottom: 30px;
+    }
+
+    .commitment-header {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 16px;
+        margin-bottom: 24px;
+    }
+
+    .commitment-header h1 {
+        font-size: 25px;
+    }
+
+    .commitment-header-actions {
+        width: 100%;
+        justify-content: stretch;
+        flex-wrap: wrap;
+    }
+
+    .commitment-header-actions .commitment-back-btn,
+    .commitment-header-actions button {
+        flex: 1 1 140px;
+        min-width: 0;
+        min-height: 44px;
+        white-space: normal;
+    }
+
+    .commitment-summary {
+        gap: 12px;
+        margin-bottom: 28px;
+    }
+
+    .commitment-summary-card {
+        padding: 17px;
+    }
+
+    .commitment-summary-card h3 {
+        font-size: 25px;
+    }
+
+    .commitment-summary-card p {
+        font-size: 13px;
+    }
+
+    .commitment-toolbar {
+        align-items: flex-start;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .commitment-toolbar h2 {
+        font-size: 19px;
+    }
+
+    .commitment-section {
+        margin-bottom: 30px;
+    }
+
+    .commitment-section h2 {
+        font-size: 18px;
+    }
+
+    .commitment-card {
+        padding: 19px;
+    }
+
+    .commitment-actions {
+        gap: 10px;
+    }
+}
+
+/* ==============================
+   SMALL PHONES
+============================== */
+
+@media (max-width: 400px) {
+    .commitment-page {
+        width: calc(100% - 22px);
+        margin-top: 18px;
+    }
+
+    .commitment-summary {
+        grid-template-columns: 1fr;
+    }
+
+    .commitment-summary-card {
+        padding: 16px;
+    }
+
+    .commitment-header-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .commitment-header-actions .commitment-back-btn,
+    .commitment-header-actions button {
+        width: 100%;
+        flex: none;
+    }
+
+    .commitment-actions {
+        flex-direction: column;
+    }
+
+    .commitment-actions button {
+        width: 100%;
+    }
+
+    .commitment-card {
+        padding: 16px;
+    }
+
+    .commitment-message {
+        padding: 12px;
+    }
+}
+
+/* ==============================
+   TOUCH DEVICES
+============================== */
+
+@media (hover: none) {
+    .commitment-summary-card:hover,
+    .commitment-card:hover {
+        transform: none;
+        box-shadow: 0 3px 10px rgba(15, 23, 42, 0.04);
+    }
+
+    .commitment-header-actions .commitment-back-btn:hover,
+    .commitment-header-actions button:hover:not(:disabled) {
+        background: #2563eb;
+    }
+
+    .commitment-approve-btn:hover:not(:disabled),
+    .commitment-complete-btn:hover:not(:disabled) {
+        background: #15803d;
+    }
+
+    .commitment-ignore-btn:hover:not(:disabled) {
+        background: #64748b;
+    }
+}
