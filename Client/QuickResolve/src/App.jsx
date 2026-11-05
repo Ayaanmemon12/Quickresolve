@@ -6,7 +6,7 @@ import Chatbot from "./pages/Chatbot";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
-import Business from "./pages/business";
+import Business from "./pages/Business.jsx";
 import ConversationsPage from "./pages/ConversationsPage";
 import SupportGapsPage from "./pages/SupportGapsPage";
 import SupportRequests from "./pages/SupportRequests";
